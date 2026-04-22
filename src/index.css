@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 20% 6%;
+    --foreground: 80 20% 92%;
+
+    --card: 150 15% 10%;
+    --card-foreground: 80 20% 92%;
+
+    --popover: 150 15% 10%;
+    --popover-foreground: 80 20% 92%;
+
+    --primary: 142 60% 45%;
+    --primary-foreground: 150 20% 6%;
+
+    --secondary: 150 12% 16%;
+    --secondary-foreground: 80 20% 85%;
+
+    --muted: 150 10% 14%;
+    --muted-foreground: 150 10% 55%;
+
+    --accent: 85 50% 50%;
+    --accent-foreground: 150 20% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 10% 18%;
+    --input: 150 10% 18%;
+    --ring: 142 60% 45%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(150 20% 4%) 0%, hsl(150 25% 10%) 50%, hsl(142 30% 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(150 15% 12%) 0%, hsl(150 15% 8%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(142 60% 45%) 0%, hsl(85 50% 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(142 60% 45% / 0.15) 0%, transparent 70%);
+
+    --shadow-glow: 0 0 40px hsl(142 60% 45% / 0.2);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 150 15% 10%;
+    --sidebar-foreground: 80 20% 92%;
+    --sidebar-primary: 142 60% 45%;
+    --sidebar-primary-foreground: 150 20% 6%;
+    --sidebar-accent: 150 12% 16%;
+    --sidebar-accent-foreground: 80 20% 85%;
+    --sidebar-border: 150 10% 18%;
+    --sidebar-ring: 142 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+}
